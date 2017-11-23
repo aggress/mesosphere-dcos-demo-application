@@ -1,0 +1,69 @@
+{
+  "id": "/demo-fe-app",
+  "backoffFactor": 1.15,
+  "backoffSeconds": 1,
+  "container": {
+    "portMappings": [
+      {
+        "containerPort": 5000,
+        "hostPort": 0,
+        "labels": {
+          "VIP_0": "/demo-fe-app:5000"
+        },
+        "protocol": "tcp",
+        "servicePort": 10004,
+        "name": "demo-fe-app"
+      }
+    ],
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "aggress/demo-fe-app",
+      "forcePullImage": true,
+      "privileged": false,
+      "parameters": []
+    }
+  },
+  "cpus": 0.1,
+  "disk": 0,
+  "instances": 2,
+  "labels": {
+    "HAPROXY_DEPLOYMENT_GROUP": "nginx",
+    "HAPROXY_GROUP": "external",
+    "HAPROXY_DEPLOYMENT_ALT_PORT": "10005",
+    "HAPROXY_1_VHOST": "10.0.7.63",
+    "HAPROXY_0_VHOST": "10.0.7.210"
+  },
+  "maxLaunchDelaySeconds": 3600,
+  "mem": 128,
+  "gpus": 0,
+  "networks": [
+    {
+      "mode": "container/bridge"
+    }
+  ],
+  "requirePorts": false,
+  "upgradeStrategy": {
+    "maximumOverCapacity": 1,
+    "minimumHealthCapacity": 1
+  },
+  "killSelection": "YOUNGEST_FIRST",
+  "unreachableStrategy": {
+    "inactiveAfterSeconds": 0,
+    "expungeAfterSeconds": 0
+  },
+  "healthChecks": [
+    {
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "maxConsecutiveFailures": 3,
+      "portIndex": 0,
+      "timeoutSeconds": 20,
+      "delaySeconds": 15,
+      "protocol": "MESOS_HTTP",
+      "path": "/"
+    }
+  ],
+  "fetch": [],
+  "constraints": [["hostname", "UNIQUE"]]
+}
