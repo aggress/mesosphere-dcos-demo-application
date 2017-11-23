@@ -31,12 +31,14 @@ Use the DC/OS CLi to launch both applications
 1. Find the public IP address of one of your public agents and open in a browser http://public-ip:10004/ to see the following
 1. Refresh the browser to see the hostname information change as both BE apps are called
 
+````
 Front end application demo
 Start Time	2017-Nov-23 13:43:26
 Hostname	1fe8a1417897
 Local Address	172.17.0.2
 Remote Address	10.0.3.20
 Server Hit	56
+````
 
 Let's check one of the back end applications
 
