@@ -7,14 +7,14 @@ A simple back-end (BE) and front-end (FE) appl to demonstrate the following DC/O
 * HTTP health check
 * Deployment to unique hosts
 
-**Architecture**
+## Architecture ##
 
-BE
+**BE**
 * 2 instances of the the BE container are deployed on unique private agents.
 * A VIP address is configured to round robin between them `demo-be-app.marathon.l4lb.thisdcos.directory:5000`.
 * A Python Flask site presents host level information from /.
 
-FE
+**FE**
 * 2 instances of the FE container are deployed and configured to expose themselves via Marathon LB.
 * A Marathon-LB backend is configured with both FE containers, exposed via the public agents on TCP/10004.
 * A Python Flask site connects to the BE VIP address and pulls in the information presented.
@@ -22,9 +22,9 @@ FE
 
 
 
-**Usage**
+## Usage ##
 
-Requirements
+**Requirements**
 
 A running DC/OS cluster with a minimum of 2 public agents and 2 private agents
 
@@ -51,6 +51,6 @@ Let's check one of the back end applications
 1. Find one of the BE app container's port, it'll look like 0.0.0.0:23352 `$ docker ps | grep demo-be`.
 1. Curl the container directly to see the back end output `curl http://0.0.0.0:23352/` Note it'll say *Back end application demo* rather than *Front*.
 
-HAProxy statistics
+## HAProxy statistics ##
 
 These are accessible from each Marathon-LB instance on their public IP http://<publicIP>:9090/haproxy?stats
