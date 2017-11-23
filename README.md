@@ -2,10 +2,11 @@
 
 A simple back-end (BE) and front-end (FE) app to demonstrate the following DC/OS features.
 
-* VIP based layer4 load balancing for presenting the FE app to access both BE apps
-* Marathon-LB to publish the FE app to the outside world and make it accessible via a vhost
-* HTTP health check
-* Deployment constraints to unique hosts
+* VIP based layer4 load balancing for presenting the FE app to access both BE apps.
+* Marathon-LB to publish the FE app to the outside world and make it accessible via a vhost.
+* HTTP health check.
+* Deployment constraints to unique hosts.
+* Deploying Marathon apps as a group, with dependencies.
 
 ## Architecture ##
 
@@ -47,7 +48,7 @@ This will a group structure if it doesn't exist:
      * demo-be-app
   * front-end-service
      * demo-fe-app
-     
+
 
 **Testing**
 
