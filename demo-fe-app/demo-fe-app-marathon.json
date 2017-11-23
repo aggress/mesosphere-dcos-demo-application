@@ -7,11 +7,8 @@
       {
         "containerPort": 5000,
         "hostPort": 0,
-        "labels": {
-          "VIP_0": "/demo-fe-app:5000"
-        },
         "protocol": "tcp",
-        "servicePort": 10004,
+        "servicePort": 80,
         "name": "demo-fe-app"
       }
     ],
@@ -28,11 +25,9 @@
   "disk": 0,
   "instances": 2,
   "labels": {
-    "HAPROXY_DEPLOYMENT_GROUP": "nginx",
+    "HAPROXY_DEPLOYMENT_GROUP": "demo-fe-app",
     "HAPROXY_GROUP": "external",
-    "HAPROXY_DEPLOYMENT_ALT_PORT": "10005",
-    "HAPROXY_1_VHOST": "10.0.7.63",
-    "HAPROXY_0_VHOST": "10.0.7.210"
+    "HAPROXY_0_VHOST": "test.example.com"
   },
   "maxLaunchDelaySeconds": 3600,
   "mem": 128,
