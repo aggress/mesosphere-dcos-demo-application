@@ -42,13 +42,12 @@ Please note the apps are baked into Docker images hosted off my personal Docker 
 
 This will a group structure if it doesn't exist:
 
-demo-team
-  back-end-service
-    demo-be-app
-
-  front-end-service
-    demo-fe-app
-
+* demo-team
+  * back-end-service
+     * demo-be-app
+  * front-end-service
+     * demo-fe-app
+     
 
 **Testing**
 
