@@ -25,7 +25,9 @@ Please note the apps are baked into Docker images hosted off my personal Docker 
 
 **Diagram & Walthrough**
 
-![Demo Application Architecture](https://github.com/aggress/mesosphere-dcos-demo-application/blob/master/demo_application_architecture.png)
+<p align="center">
+  <img src="https://github.com/aggress/mesosphere-dcos-demo-application/blob/master/demo_application_architecture.png?raw=true" alt="Demo Application Architecture"/>
+</p>
 
 1. Using cURL or a browser the user navigates to http://test.example.com, a DNS entry set up to round robin to one or both public agent IPs.
 2. Marathon-LB has test.example.com configured as a vhost and has a backend called demo-fe-app which contains both demo-fe-app container IP addresses and ports. It opens a connection to one.
