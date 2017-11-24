@@ -1,6 +1,6 @@
 # mesosphere-dcos-demo-application
 
-A simple back-end (BE) and front-end (FE) app to demonstrate the following DC/OS features.
+A simple app to demonstrate the following DC/OS features.
 
 * VIP based layer4 load balancing for presenting the FE app to access both BE apps.
 * Marathon-LB to publish the FE app to the outside world and make it accessible via a vhost.
@@ -11,6 +11,8 @@ A simple back-end (BE) and front-end (FE) app to demonstrate the following DC/OS
 ## Architecture ##
 
 Please note the apps are baked into Docker images hosted off my personal Docker hub account, Dockerfiles are included if you wish to rebuild and host on your own Docker registry.
+
+View this as a 2 layer application, with a front end (FE) website that calls on a back end (BE) API layer.
 
 **BE**
 * 2 instances of the the BE container deployed on unique private agents.
