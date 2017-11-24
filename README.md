@@ -23,6 +23,7 @@ Please note the apps are baked into Docker images hosted off my personal Docker 
 * A Python Flask site which connects to the BE VIP address and pulls in the content served by the BE apps.
 * The FE app code performs a string replace to change the words Back with Front and present that information.
 
+
 **Diagram & Walthrough**
 
 <p align="center">
