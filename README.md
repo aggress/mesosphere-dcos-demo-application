@@ -23,6 +23,16 @@ Please note the apps are baked into Docker images hosted off my personal Docker 
 * A Python Flask site which connects to the BE VIP address and pulls in the content served by the BE apps.
 * The FE app code performs a string replace to change the words Back with Front and present that information.
 
+**Diagram & Walthrough**
+
+![Demo Application Architecture](https://octodex.github.com/images/yaktocat.png)
+
+1. Using cURL or a browser the user navigates to http://test.example.com, a DNS entry set up to round robin to one or both public agent IPs.
+2. Marathon-LB has test.example.com configured as a vhost and has a backend called demo-fe-app which contains both demo-fe-app container IP addresses and ports. It opens a connection to one.
+3. The FE app opens a TCP connection to the VIP address for the BE apps
+4. The VIP address round robins to both BE apps and provides a connection to one
+5. THe BE app serves the content back to the FE app which then serves it back through Marathon-LB to the user
+
 
 ## Usage ##
 
