@@ -32,11 +32,12 @@ View this as a 2 layer application, with a front end (FE) website that calls on 
   <img src="https://github.com/aggress/mesosphere-dcos-demo-application/blob/master/demo_application_architecture.png?raw=true" alt="Demo Application Architecture"/>
 </p>
 
-1. Using cURL or a browser the user navigates to http://test.example.com, a DNS entry set up to round robin to one or both public agent IPs.
+1. Using cURL or a browser the user navigates to http://test.example.com.
 2. Marathon-LB has test.example.com configured as a vhost and has a backend called demo-fe-app which contains both demo-fe-app container IP addresses and ports. It opens a connection to one.
-3. The FE app opens a TCP connection to the VIP address for the BE apps
-4. The VIP address round robins to both BE apps and provides a connection to one
-5. THe BE app serves the content back to the FE app which then serves it back through Marathon-LB to the user
+3. The FE app opens a TCP connection to the VIP address for the BE apps.
+4. The VIP address round robins to both BE apps and provides a connection to one.
+5. THe BE app serves the content back to the FE app which then serves it back through Marathon-LB to the user.
+6. With `HAPROXY_0_REDIRECT_TO_HTTPS":"true"` the site is automatically redirected to HTTPS.
 
 
 ## Usage ##
@@ -56,7 +57,7 @@ View this as a 2 layer application, with a front end (FE) website that calls on 
 
 1. Add both the BE & FE apps as a group, with the BE being a dependency for the FE `$ dcos marathon group add demo-app-group.json`.
 
-This will a group structure if it doesn't exist:
+This will deploy the following groups if they don't already exist:
 
 * demo-team
   * back-end-service

@@ -103,7 +103,9 @@
 				  "labels": {
 				    "HAPROXY_DEPLOYMENT_GROUP": "demo-fe-app",
 				    "HAPROXY_GROUP": "external",
-				    "HAPROXY_0_VHOST": "test.example.com"
+				    "HAPROXY_0_VHOST": "test.example.com",
+				    "HAPROXY_0_REDIRECT_TO_HTTPS":"true",
+				    "HAPROXY_0_SSL_CERT":""
 				  },
 				  "maxLaunchDelaySeconds": 3600,
 				  "mem": 128,
