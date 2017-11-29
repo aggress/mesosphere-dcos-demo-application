@@ -4,6 +4,7 @@ A simple app to demonstrate the following DC/OS features.
 
 * VIP based layer4 load balancing for presenting the FE app to access both BE apps.
 * Marathon-LB to publish the FE app to the outside world and make it accessible via a vhost.
+* TLS/SSL termination
 * HTTP health check.
 * Deployment constraints to unique hosts.
 * Deploying Marathon apps as a group, with dependencies.
